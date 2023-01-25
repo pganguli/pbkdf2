@@ -18,7 +18,7 @@ import (
 func main() {
 	// CreateHash returns a PBKDF2-HMAC-SHA512 hash of a plain-text password using the
 	// provided algorithm parameters. The returned hash follows the format:
-	// $pbkdf2-sha512$210000$KuwdBW88vV7YiVGWsMmc8g$XO+ztCemYHheH1kqHe6QAmb99lL3MI7IeBQ05dnAXGk
+	// $pbkdf2-sha512$210000$p5T7BaVBcP6+Zxx/usUn4g$95tbpSYKqO++ciLsj9WG//GUwSXKjdOJS2sosQn5Mv4
 	hash, err := pbkdf2.CreateHash("pa$$word", pbkdf2.DefaultParams)
 	if err != nil {
 		log.Fatal(err)
