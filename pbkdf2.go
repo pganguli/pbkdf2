@@ -39,7 +39,7 @@ var (
 var DefaultParams = &Params{
 	Iterations: 210000,
 	SaltLength: 16,
-	KeyLength:  32,
+	KeyLength:  64,
 }
 
 // Params describes the input parameters used by the PBKDF2 algorithm. The
@@ -69,7 +69,7 @@ type Params struct {
 //
 // It looks like this:
 //
-//	$pbkdf2-sha512$210000$KuwdBW88vV7YiVGWsMmc8g$XO+ztCemYHheH1kqHe6QAmb99lL3MI7IeBQ05dnAXGk
+//	$pbkdf2-sha512$210000$yvu2ZftdlhcP4Tbpe2TYqA$XJsU2xkzTyRZur3/+VW07FljLcgKGfmNw+en6y3WJ0JWHHEkn4e46VcaddErsqc9jkJC5IVl4XSlh4lgv0dlug
 func CreateHash(password string, params *Params) (hash string, err error) {
 	salt, err := generateRandomBytes(params.SaltLength)
 	if err != nil {

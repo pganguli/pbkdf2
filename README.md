@@ -18,7 +18,7 @@ import (
 func main() {
 	// CreateHash returns a PBKDF2-HMAC-SHA512 hash of a plain-text password using the
 	// provided algorithm parameters. The returned hash follows the format:
-	// $pbkdf2-sha512$210000$p5T7BaVBcP6+Zxx/usUn4g$95tbpSYKqO++ciLsj9WG//GUwSXKjdOJS2sosQn5Mv4
+	// $pbkdf2-sha512$210000$yvu2ZftdlhcP4Tbpe2TYqA$XJsU2xkzTyRZur3/+VW07FljLcgKGfmNw+en6y3WJ0JWHHEkn4e46VcaddErsqc9jkJC5IVl4XSlh4lgv0dlug
 	hash, err := pbkdf2.CreateHash("pa$$word", pbkdf2.DefaultParams)
 	if err != nil {
 		log.Fatal(err)
@@ -43,7 +43,7 @@ When creating a hash you can and should configure the parameters to be suitable 
 
 * Iterations — The number of iterations (or passes). 210000 is recommended for PBKDF2-HMAC-SHA512.
 * Salt length — Length of the random salt. 16 bytes is recommended for password hashing.
-* Key length — Length of the generated key (or password hash). 16 bytes or more is recommended.
+* Key length — Length of the generated key (or password hash). 32 bytes or more is recommended.
 
 The Iterations parameter controls the computational cost of hashing the password. The higher this figure is, the greater the cost of generating the hash and the longer the runtime. It also follows that the greater the cost will be for any attacker trying to guess the password.
 
@@ -51,7 +51,7 @@ The Iterations parameter controls the computational cost of hashing the password
 params := &pbkdf2.Params{
 	Iterations:  210000,
 	SaltLength:  16,
-	KeyLength:   32,
+	KeyLength:   64,
 }
 
 

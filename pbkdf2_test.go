@@ -7,7 +7,7 @@ import (
 )
 
 func TestCreateHash(t *testing.T) {
-	hashRX, err := regexp.Compile(`^\$pbkdf2-sha512\$210000\$[A-Za-z0-9+/]{22}\$[A-Za-z0-9+/]{43}$`)
+	hashRX, err := regexp.Compile(`^\$pbkdf2-sha512\$210000\$[A-Za-z0-9+/]{22}\$[A-Za-z0-9+/]{86}$`)
 	if err != nil {
 		t.Fatal(err)
 	}
