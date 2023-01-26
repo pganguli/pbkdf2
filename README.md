@@ -1,5 +1,8 @@
 # PBKDF2-HMAC-SHA512
 
+> **Warning**  
+> Key derivation functions requiring constant memory cost such as PBKDF2 and bcrypt are deprecated in favor of those with tunable memory cost, such as scrypt and [argon2](https://github.com/alexedwards/argon2id). Setting a high memory usage for key derivation allows us to thwart hardware (FPGA / ASIC) based attacks.
+
 This package provides a convenience wrapper around Go's [pbkdf2](https://pkg.go.dev/golang.org/x/crypto/pbkdf2?tab=doc) implementation, making it simpler to securely hash and verify passwords using PBKDF2.
 
 It enforces use of the PBKDF2-HMAC-SHA512 algorithm variant and cryptographically-secure random salts.
